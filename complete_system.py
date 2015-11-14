@@ -9,6 +9,7 @@ from scipy.io import loadmat, savemat
 from scipy.cluster.vq import vq
 from itertools import groupby as g
 from datetime import datetime
+import os
 
 def most_common_oneliner(L):
   return max(g(sorted(L)), key=lambda(x, v):(len(list(v)),-L.index(x)))[0]
@@ -261,21 +262,69 @@ if __name__ == "__main__":
 				print train_image_classes.shape
 				print class_mapping.shape
 
-				result_file = open(join(result_dir, "direct_CNN.txt"), "w")
+				# generate train.txt
+				cnn_dir = "CNN"
+				if not isdir(cnn_dir):
+					makedirs(cnn_dir)
+				train_file = open(join(cnn_dir, "train.txt"), "w")
+				for i in range(len(train_image_path)):
+					train_file.write(str(train_image_path[i]) + " " + str(train_image_classes[i]) + "\n")
+				train_file.close()
+				val_file = open(join(cnn_dir, "val.txt"), "w")
+				for i in range(len(train_image_path)):
+					val_file.write(str(train_image_path[i]) + " " + str(train_image_classes[i]) + "\n")
+				val_file.close()
 
-				result_file.close()
+				os.chdir(cnn_dir)
+				result_dir = join("..", result_dir)
+				with open("run_train_imagenet.bat", "wb") as f:
+					f.write("@echo off\r\ncall train_imagenet.bat >" + join(result_dir, "direct_CNN.txt") + ".txt 2>&1")
+					f.close()
+				with open("autorun.bat", "rb") as f:
+					for command in f:
+						command = command.strip()
+				 		os.system(command)
+				 	f.close()
+				
+				# result_file = open(join(result_dir, "direct_CNN.txt"), "w")
+
+				# result_file.close()
 
 			# lamp CNN
 			if option == 5:
 				matcher = cv2.BFMatcher()
 				matches = matcher.knnMatch(query_bows, train_bows, k=average_num_images_per_class)
-				
-				result_file = open(join(result_dir, "lamp_CNN.txt"), "w")
+				count = 0
+				#result_file = open(join(result_dir, "lamp_CNN.txt"), "w")
 				for query_idx, knnMatch in enumerate(matches):
+					count += 1
 					neighbour_classes = [train_image_classes[match.trainIdx] for match in knnMatch]
 					neighbour_path = [train_image_path[match.trainIdx] for match in knnMatch]
 
-				result_file.close()
+					cnn_dir = "CNN"
+					if not isdir(cnn_dir):
+						makedirs(cnn_dir)
+					train_file = open(join(cnn_dir, "train.txt"), "w")
+					for i in range(len(neighbour_path)):
+						train_file.write(str(neighbour_path[i]) + " " + str(neighbour_classes[i]) + "\n")
+					train_file.close()
+					val_file = open(join(cnn_dir, "val.txt"), "w")
+					for i in range(len(neighbour_path)):
+						val_file.write(str(neighbour_path[i]) + " " + str(neighbour_classes[i]) + "\n")
+					val_file.close()
+
+					os.chdir(cnn_dir)
+					result_dir = join("..", result_dir)
+					with open("run_train_imagenet.bat", "wb") as f:
+						f.write("@echo off\r\ncall train_imagenet.bat >" + join(result_dir, "lamp_CNN" + str(count)) + ".txt 2>&1")
+						f.close()
+					with open("autorun.bat", "rb") as f:
+						for command in f:
+							command = command.strip()
+					 		os.system(command)
+					 	f.close()
+					os.chdir("../")
+				#result_file.close()
 
 	elif len(sys.argv) == 1: 
 		raise ValueError("error: please specific the working directory")

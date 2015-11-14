@@ -1,0 +1,267 @@
+I1114 12:16:13.610637  8844 train_net.cpp:26] Starting Optimization
+I1114 12:16:13.610637  8844 solver.cpp:41] Creating training net.
+I1114 12:16:13.610637  8844 net.cpp:75] Creating Layer data
+I1114 12:16:13.610637  8844 net.cpp:111] data -> data
+I1114 12:16:13.610637  8844 net.cpp:111] data -> label
+I1114 12:16:13.610637  8844 data_layer.cpp:145] Opening leveldb imagenet_train_leveldb
+I1114 12:16:13.782521  8844 data_layer.cpp:185] output data size: 256,3,227,227
+I1114 12:16:13.782521  8844 data_layer.cpp:204] Loading mean file fromimagenet_mean.binaryproto
+I1114 12:16:15.892285  8844 net.cpp:126] Top shape: 256 3 227 227 (39574272)
+I1114 12:16:15.892285  8844 net.cpp:126] Top shape: 256 1 1 1 (256)
+I1114 12:16:15.892285  8844 net.cpp:157] data does not need backward computation.
+I1114 12:16:15.892285  8844 net.cpp:75] Creating Layer conv1
+I1114 12:16:15.892285  8844 net.cpp:85] conv1 <- data
+I1114 12:16:15.892285  8844 net.cpp:111] conv1 -> conv1
+I1114 12:16:15.892285  8844 net.cpp:126] Top shape: 256 96 55 55 (74342400)
+I1114 12:16:15.892285  8844 net.cpp:152] conv1 needs backward computation.
+I1114 12:16:15.892285  8844 net.cpp:75] Creating Layer relu1
+I1114 12:16:15.892285  8844 net.cpp:85] relu1 <- conv1
+I1114 12:16:15.892285  8844 net.cpp:99] relu1 -> conv1 (in-place)
+I1114 12:16:15.892285  8844 net.cpp:126] Top shape: 256 96 55 55 (74342400)
+I1114 12:16:15.892285  8844 net.cpp:152] relu1 needs backward computation.
+I1114 12:16:15.892285  8844 net.cpp:75] Creating Layer pool1
+I1114 12:16:15.892285  8844 net.cpp:85] pool1 <- conv1
+I1114 12:16:15.892285  8844 net.cpp:111] pool1 -> pool1
+I1114 12:16:15.892285  8844 net.cpp:126] Top shape: 256 96 27 27 (17915904)
+I1114 12:16:15.892285  8844 net.cpp:152] pool1 needs backward computation.
+I1114 12:16:15.892285  8844 net.cpp:75] Creating Layer norm1
+I1114 12:16:15.892285  8844 net.cpp:85] norm1 <- pool1
+I1114 12:16:15.892285  8844 net.cpp:111] norm1 -> norm1
+I1114 12:16:15.892285  8844 net.cpp:126] Top shape: 256 96 27 27 (17915904)
+I1114 12:16:15.892285  8844 net.cpp:152] norm1 needs backward computation.
+I1114 12:16:15.892285  8844 net.cpp:75] Creating Layer conv2
+I1114 12:16:15.892285  8844 net.cpp:85] conv2 <- norm1
+I1114 12:16:15.892285  8844 net.cpp:111] conv2 -> conv2
+I1114 12:16:15.923533  8844 net.cpp:126] Top shape: 256 256 27 27 (47775744)
+I1114 12:16:15.923533  8844 net.cpp:152] conv2 needs backward computation.
+I1114 12:16:15.923533  8844 net.cpp:75] Creating Layer relu2
+I1114 12:16:15.923533  8844 net.cpp:85] relu2 <- conv2
+I1114 12:16:15.923533  8844 net.cpp:99] relu2 -> conv2 (in-place)
+I1114 12:16:15.923533  8844 net.cpp:126] Top shape: 256 256 27 27 (47775744)
+I1114 12:16:15.923533  8844 net.cpp:152] relu2 needs backward computation.
+I1114 12:16:15.923533  8844 net.cpp:75] Creating Layer pool2
+I1114 12:16:15.923533  8844 net.cpp:85] pool2 <- conv2
+I1114 12:16:15.923533  8844 net.cpp:111] pool2 -> pool2
+I1114 12:16:15.923533  8844 net.cpp:126] Top shape: 256 256 13 13 (11075584)
+I1114 12:16:15.923533  8844 net.cpp:152] pool2 needs backward computation.
+I1114 12:16:15.923533  8844 net.cpp:75] Creating Layer norm2
+I1114 12:16:15.923533  8844 net.cpp:85] norm2 <- pool2
+I1114 12:16:15.923533  8844 net.cpp:111] norm2 -> norm2
+I1114 12:16:15.923533  8844 net.cpp:126] Top shape: 256 256 13 13 (11075584)
+I1114 12:16:15.923533  8844 net.cpp:152] norm2 needs backward computation.
+I1114 12:16:15.923533  8844 net.cpp:75] Creating Layer conv3
+I1114 12:16:15.923533  8844 net.cpp:85] conv3 <- norm2
+I1114 12:16:15.923533  8844 net.cpp:111] conv3 -> conv3
+I1114 12:16:16.017287  8844 net.cpp:126] Top shape: 256 384 13 13 (16613376)
+I1114 12:16:16.017287  8844 net.cpp:152] conv3 needs backward computation.
+I1114 12:16:16.017287  8844 net.cpp:75] Creating Layer relu3
+I1114 12:16:16.017287  8844 net.cpp:85] relu3 <- conv3
+I1114 12:16:16.017287  8844 net.cpp:99] relu3 -> conv3 (in-place)
+I1114 12:16:16.017287  8844 net.cpp:126] Top shape: 256 384 13 13 (16613376)
+I1114 12:16:16.017287  8844 net.cpp:152] relu3 needs backward computation.
+I1114 12:16:16.017287  8844 net.cpp:75] Creating Layer conv4
+I1114 12:16:16.017287  8844 net.cpp:85] conv4 <- conv3
+I1114 12:16:16.017287  8844 net.cpp:111] conv4 -> conv4
+I1114 12:16:16.064162  8844 net.cpp:126] Top shape: 256 384 13 13 (16613376)
+I1114 12:16:16.064162  8844 net.cpp:152] conv4 needs backward computation.
+I1114 12:16:16.064162  8844 net.cpp:75] Creating Layer relu4
+I1114 12:16:16.064162  8844 net.cpp:85] relu4 <- conv4
+I1114 12:16:16.064162  8844 net.cpp:99] relu4 -> conv4 (in-place)
+I1114 12:16:16.064162  8844 net.cpp:126] Top shape: 256 384 13 13 (16613376)
+I1114 12:16:16.064162  8844 net.cpp:152] relu4 needs backward computation.
+I1114 12:16:16.064162  8844 net.cpp:75] Creating Layer conv5
+I1114 12:16:16.064162  8844 net.cpp:85] conv5 <- conv4
+I1114 12:16:16.064162  8844 net.cpp:111] conv5 -> conv5
+I1114 12:16:16.111037  8844 net.cpp:126] Top shape: 256 256 13 13 (11075584)
+I1114 12:16:16.111037  8844 net.cpp:152] conv5 needs backward computation.
+I1114 12:16:16.111037  8844 net.cpp:75] Creating Layer relu5
+I1114 12:16:16.111037  8844 net.cpp:85] relu5 <- conv5
+I1114 12:16:16.111037  8844 net.cpp:99] relu5 -> conv5 (in-place)
+I1114 12:16:16.111037  8844 net.cpp:126] Top shape: 256 256 13 13 (11075584)
+I1114 12:16:16.111037  8844 net.cpp:152] relu5 needs backward computation.
+I1114 12:16:16.111037  8844 net.cpp:75] Creating Layer pool5
+I1114 12:16:16.111037  8844 net.cpp:85] pool5 <- conv5
+I1114 12:16:16.111037  8844 net.cpp:111] pool5 -> pool5
+I1114 12:16:16.111037  8844 net.cpp:126] Top shape: 256 256 6 6 (2359296)
+I1114 12:16:16.111037  8844 net.cpp:152] pool5 needs backward computation.
+I1114 12:16:16.111037  8844 net.cpp:75] Creating Layer fc6
+I1114 12:16:16.111037  8844 net.cpp:85] fc6 <- pool5
+I1114 12:16:16.111037  8844 net.cpp:111] fc6 -> fc6
+I1114 12:16:19.971165  8844 net.cpp:126] Top shape: 256 4096 1 1 (1048576)
+I1114 12:16:19.971165  8844 net.cpp:152] fc6 needs backward computation.
+I1114 12:16:19.971165  8844 net.cpp:75] Creating Layer relu6
+I1114 12:16:19.971165  8844 net.cpp:85] relu6 <- fc6
+I1114 12:16:19.971165  8844 net.cpp:99] relu6 -> fc6 (in-place)
+I1114 12:16:19.971165  8844 net.cpp:126] Top shape: 256 4096 1 1 (1048576)
+I1114 12:16:19.971165  8844 net.cpp:152] relu6 needs backward computation.
+I1114 12:16:19.971165  8844 net.cpp:75] Creating Layer drop6
+I1114 12:16:19.971165  8844 net.cpp:85] drop6 <- fc6
+I1114 12:16:19.971165  8844 net.cpp:99] drop6 -> fc6 (in-place)
+I1114 12:16:19.971165  8844 net.cpp:126] Top shape: 256 4096 1 1 (1048576)
+I1114 12:16:19.971165  8844 net.cpp:152] drop6 needs backward computation.
+I1114 12:16:19.971165  8844 net.cpp:75] Creating Layer fc7
+I1114 12:16:19.971165  8844 net.cpp:85] fc7 <- fc6
+I1114 12:16:19.971165  8844 net.cpp:111] fc7 -> fc7
+I1114 12:16:21.753913  8844 net.cpp:126] Top shape: 256 4096 1 1 (1048576)
+I1114 12:16:21.753913  8844 net.cpp:152] fc7 needs backward computation.
+I1114 12:16:21.753913  8844 net.cpp:75] Creating Layer relu7
+I1114 12:16:21.753913  8844 net.cpp:85] relu7 <- fc7
+I1114 12:16:21.753913  8844 net.cpp:99] relu7 -> fc7 (in-place)
+I1114 12:16:21.753913  8844 net.cpp:126] Top shape: 256 4096 1 1 (1048576)
+I1114 12:16:21.753913  8844 net.cpp:152] relu7 needs backward computation.
+I1114 12:16:21.753913  8844 net.cpp:75] Creating Layer drop7
+I1114 12:16:21.753913  8844 net.cpp:85] drop7 <- fc7
+I1114 12:16:21.753913  8844 net.cpp:99] drop7 -> fc7 (in-place)
+I1114 12:16:21.753913  8844 net.cpp:126] Top shape: 256 4096 1 1 (1048576)
+I1114 12:16:21.753913  8844 net.cpp:152] drop7 needs backward computation.
+I1114 12:16:21.753913  8844 net.cpp:75] Creating Layer fc8
+I1114 12:16:21.753913  8844 net.cpp:85] fc8 <- fc7
+I1114 12:16:21.753913  8844 net.cpp:111] fc8 -> fc8
+I1114 12:16:22.161242  8844 net.cpp:126] Top shape: 256 1000 1 1 (256000)
+I1114 12:16:22.161242  8844 net.cpp:152] fc8 needs backward computation.
+I1114 12:16:22.161242  8844 net.cpp:75] Creating Layer loss
+I1114 12:16:22.161242  8844 net.cpp:85] loss <- fc8
+I1114 12:16:22.161242  8844 net.cpp:85] loss <- label
+I1114 12:16:22.161242  8844 net.cpp:152] loss needs backward computation.
+I1114 12:16:22.161242  8844 net.cpp:181] Collecting Learning Rate and Weight Decay.
+I1114 12:16:22.161242  8844 net.cpp:174] Network initialization done.
+I1114 12:16:22.161242  8844 net.cpp:175] Memory required for Data 1074761728
+I1114 12:16:22.161242  8844 solver.cpp:44] Creating testing net.
+I1114 12:16:22.161242  8844 net.cpp:75] Creating Layer data
+I1114 12:16:22.161242  8844 net.cpp:111] data -> data
+I1114 12:16:22.161242  8844 net.cpp:111] data -> label
+I1114 12:16:22.161242  8844 data_layer.cpp:145] Opening leveldb imagenet_val_leveldb
+I1114 12:16:32.450672  8844 data_layer.cpp:185] output data size: 50,3,227,227
+I1114 12:16:32.450672  8844 data_layer.cpp:204] Loading mean file fromimagenet_mean.binaryproto
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 3 227 227 (7729350)
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 1 1 1 (50)
+I1114 12:16:33.247568  8844 net.cpp:157] data does not need backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer conv1
+I1114 12:16:33.247568  8844 net.cpp:85] conv1 <- data
+I1114 12:16:33.247568  8844 net.cpp:111] conv1 -> conv1
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 96 55 55 (14520000)
+I1114 12:16:33.247568  8844 net.cpp:152] conv1 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer relu1
+I1114 12:16:33.247568  8844 net.cpp:85] relu1 <- conv1
+I1114 12:16:33.247568  8844 net.cpp:99] relu1 -> conv1 (in-place)
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 96 55 55 (14520000)
+I1114 12:16:33.247568  8844 net.cpp:152] relu1 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer pool1
+I1114 12:16:33.247568  8844 net.cpp:85] pool1 <- conv1
+I1114 12:16:33.247568  8844 net.cpp:111] pool1 -> pool1
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 96 27 27 (3499200)
+I1114 12:16:33.247568  8844 net.cpp:152] pool1 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer norm1
+I1114 12:16:33.247568  8844 net.cpp:85] norm1 <- pool1
+I1114 12:16:33.247568  8844 net.cpp:111] norm1 -> norm1
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 96 27 27 (3499200)
+I1114 12:16:33.247568  8844 net.cpp:152] norm1 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer conv2
+I1114 12:16:33.247568  8844 net.cpp:85] conv2 <- norm1
+I1114 12:16:33.247568  8844 net.cpp:111] conv2 -> conv2
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 256 27 27 (9331200)
+I1114 12:16:33.247568  8844 net.cpp:152] conv2 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer relu2
+I1114 12:16:33.247568  8844 net.cpp:85] relu2 <- conv2
+I1114 12:16:33.247568  8844 net.cpp:99] relu2 -> conv2 (in-place)
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 256 27 27 (9331200)
+I1114 12:16:33.247568  8844 net.cpp:152] relu2 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer pool2
+I1114 12:16:33.247568  8844 net.cpp:85] pool2 <- conv2
+I1114 12:16:33.247568  8844 net.cpp:111] pool2 -> pool2
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 256 13 13 (2163200)
+I1114 12:16:33.247568  8844 net.cpp:152] pool2 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer norm2
+I1114 12:16:33.247568  8844 net.cpp:85] norm2 <- pool2
+I1114 12:16:33.247568  8844 net.cpp:111] norm2 -> norm2
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 256 13 13 (2163200)
+I1114 12:16:33.247568  8844 net.cpp:152] norm2 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer conv3
+I1114 12:16:33.247568  8844 net.cpp:85] conv3 <- norm2
+I1114 12:16:33.247568  8844 net.cpp:111] conv3 -> conv3
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 384 13 13 (3244800)
+I1114 12:16:33.247568  8844 net.cpp:152] conv3 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer relu3
+I1114 12:16:33.247568  8844 net.cpp:85] relu3 <- conv3
+I1114 12:16:33.247568  8844 net.cpp:99] relu3 -> conv3 (in-place)
+I1114 12:16:33.247568  8844 net.cpp:126] Top shape: 50 384 13 13 (3244800)
+I1114 12:16:33.247568  8844 net.cpp:152] relu3 needs backward computation.
+I1114 12:16:33.247568  8844 net.cpp:75] Creating Layer conv4
+I1114 12:16:33.247568  8844 net.cpp:85] conv4 <- conv3
+I1114 12:16:33.247568  8844 net.cpp:111] conv4 -> conv4
+I1114 12:16:33.263190  8844 net.cpp:126] Top shape: 50 384 13 13 (3244800)
+I1114 12:16:33.263190  8844 net.cpp:152] conv4 needs backward computation.
+I1114 12:16:33.263190  8844 net.cpp:75] Creating Layer relu4
+I1114 12:16:33.263190  8844 net.cpp:85] relu4 <- conv4
+I1114 12:16:33.263190  8844 net.cpp:99] relu4 -> conv4 (in-place)
+I1114 12:16:33.263190  8844 net.cpp:126] Top shape: 50 384 13 13 (3244800)
+I1114 12:16:33.263190  8844 net.cpp:152] relu4 needs backward computation.
+I1114 12:16:33.263190  8844 net.cpp:75] Creating Layer conv5
+I1114 12:16:33.263190  8844 net.cpp:85] conv5 <- conv4
+I1114 12:16:33.263190  8844 net.cpp:111] conv5 -> conv5
+I1114 12:16:33.263190  8844 net.cpp:126] Top shape: 50 256 13 13 (2163200)
+I1114 12:16:33.263190  8844 net.cpp:152] conv5 needs backward computation.
+I1114 12:16:33.263190  8844 net.cpp:75] Creating Layer relu5
+I1114 12:16:33.263190  8844 net.cpp:85] relu5 <- conv5
+I1114 12:16:33.263190  8844 net.cpp:99] relu5 -> conv5 (in-place)
+I1114 12:16:33.263190  8844 net.cpp:126] Top shape: 50 256 13 13 (2163200)
+I1114 12:16:33.263190  8844 net.cpp:152] relu5 needs backward computation.
+I1114 12:16:33.263190  8844 net.cpp:75] Creating Layer pool5
+I1114 12:16:33.263190  8844 net.cpp:85] pool5 <- conv5
+I1114 12:16:33.263190  8844 net.cpp:111] pool5 -> pool5
+I1114 12:16:33.263190  8844 net.cpp:126] Top shape: 50 256 6 6 (460800)
+I1114 12:16:33.263190  8844 net.cpp:152] pool5 needs backward computation.
+I1114 12:16:33.263190  8844 net.cpp:75] Creating Layer fc6
+I1114 12:16:33.263190  8844 net.cpp:85] fc6 <- pool5
+I1114 12:16:33.263190  8844 net.cpp:111] fc6 -> fc6
+I1114 12:16:33.490990  8844 net.cpp:126] Top shape: 50 4096 1 1 (204800)
+I1114 12:16:33.490990  8844 net.cpp:152] fc6 needs backward computation.
+I1114 12:16:33.490990  8844 net.cpp:75] Creating Layer relu6
+I1114 12:16:33.490990  8844 net.cpp:85] relu6 <- fc6
+I1114 12:16:33.490990  8844 net.cpp:99] relu6 -> fc6 (in-place)
+I1114 12:16:33.490990  8844 net.cpp:126] Top shape: 50 4096 1 1 (204800)
+I1114 12:16:33.490990  8844 net.cpp:152] relu6 needs backward computation.
+I1114 12:16:33.490990  8844 net.cpp:75] Creating Layer drop6
+I1114 12:16:33.490990  8844 net.cpp:85] drop6 <- fc6
+I1114 12:16:33.490990  8844 net.cpp:99] drop6 -> fc6 (in-place)
+I1114 12:16:33.490990  8844 net.cpp:126] Top shape: 50 4096 1 1 (204800)
+I1114 12:16:33.490990  8844 net.cpp:152] drop6 needs backward computation.
+I1114 12:16:33.490990  8844 net.cpp:75] Creating Layer fc7
+I1114 12:16:33.490990  8844 net.cpp:85] fc7 <- fc6
+I1114 12:16:33.490990  8844 net.cpp:111] fc7 -> fc7
+I1114 12:16:33.584286  8844 net.cpp:126] Top shape: 50 4096 1 1 (204800)
+I1114 12:16:33.584286  8844 net.cpp:152] fc7 needs backward computation.
+I1114 12:16:33.584286  8844 net.cpp:75] Creating Layer relu7
+I1114 12:16:33.584286  8844 net.cpp:85] relu7 <- fc7
+I1114 12:16:33.584286  8844 net.cpp:99] relu7 -> fc7 (in-place)
+I1114 12:16:33.584286  8844 net.cpp:126] Top shape: 50 4096 1 1 (204800)
+I1114 12:16:33.584286  8844 net.cpp:152] relu7 needs backward computation.
+I1114 12:16:33.584286  8844 net.cpp:75] Creating Layer drop7
+I1114 12:16:33.584286  8844 net.cpp:85] drop7 <- fc7
+I1114 12:16:33.584286  8844 net.cpp:99] drop7 -> fc7 (in-place)
+I1114 12:16:33.584286  8844 net.cpp:126] Top shape: 50 4096 1 1 (204800)
+I1114 12:16:33.584286  8844 net.cpp:152] drop7 needs backward computation.
+I1114 12:16:33.584286  8844 net.cpp:75] Creating Layer fc8
+I1114 12:16:33.584286  8844 net.cpp:85] fc8 <- fc7
+I1114 12:16:33.584286  8844 net.cpp:111] fc8 -> fc8
+I1114 12:16:33.615514  8844 net.cpp:126] Top shape: 50 1000 1 1 (50000)
+I1114 12:16:33.615514  8844 net.cpp:152] fc8 needs backward computation.
+I1114 12:16:33.615514  8844 net.cpp:75] Creating Layer prob
+I1114 12:16:33.615514  8844 net.cpp:85] prob <- fc8
+I1114 12:16:33.615514  8844 net.cpp:111] prob -> prob
+I1114 12:16:33.615514  8844 net.cpp:126] Top shape: 50 1000 1 1 (50000)
+I1114 12:16:33.615514  8844 net.cpp:152] prob needs backward computation.
+I1114 12:16:33.615514  8844 net.cpp:75] Creating Layer accuracy
+I1114 12:16:33.615514  8844 net.cpp:85] accuracy <- prob
+I1114 12:16:33.615514  8844 net.cpp:85] accuracy <- label
+I1114 12:16:33.615514  8844 net.cpp:111] accuracy -> accuracy
+I1114 12:16:33.615514  8844 net.cpp:126] Top shape: 1 2 1 1 (2)
+I1114 12:16:33.615514  8844 net.cpp:152] accuracy needs backward computation.
+I1114 12:16:33.615514  8844 net.cpp:163] This network produces output accuracy
+I1114 12:16:33.615514  8844 net.cpp:181] Collecting Learning Rate and Weight Decay.
+I1114 12:16:33.615514  8844 net.cpp:174] Network initialization done.
+I1114 12:16:33.615514  8844 net.cpp:175] Memory required for Data 210114408
+I1114 12:16:33.615514  8844 solver.cpp:49] Solver scaffolding done.
+I1114 12:16:33.615514  8844 solver.cpp:61] Solving CaffeNet
+I1114 12:16:33.615514  8844 solver.cpp:106] Iteration 0, Testing net
+^CTerminate batch job (Y/N)? 

@@ -1,0 +1,1 @@
+"compute_image_mean.exe" imagenet_train_leveldb imagenet_mean.binaryproto

@@ -1,0 +1,12 @@
+test_dir/train/g01/IMG_5702.JPG 0
+test_dir/train/g01/IMG_6032.JPG 0
+test_dir/train/g01/IMG_6031.JPG 0
+test_dir/train/g01/IMG_6033.JPG 0
+test_dir/train/g02/IMG_6036.JPG 1
+test_dir/train/g02/IMG_5708.JPG 1
+test_dir/train/g01/IMG_5701.JPG 0
+test_dir/train/g02/IMG_6038.JPG 1
+test_dir/train/g01/IMG_5703.JPG 0
+test_dir/train/g03/IMG_5714.JPG 2
+test_dir/train/g02/IMG_5707.JPG 1
+test_dir/train/g03/IMG_5713.JPG 2
